@@ -1,0 +1,6 @@
+[
+  {"role": "system", "content": "回答简洁。"},
+  {"role": "user", "content": "HTTP 是什么？"},
+  {"role": "assistant", "content": "HTTP 是客户端与服务器交换资源的应用层协议。"},
+  {"role": "user", "content": [{"type": "text", "text": "它与 HTTPS 有什么区别？"}]}
+]

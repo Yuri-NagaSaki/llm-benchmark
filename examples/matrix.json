@@ -1,0 +1,11 @@
+{
+  "run": {"rounds": 5, "warmup": 0, "schedule": "parallel", "connection": "reuse", "timeout_seconds": 120, "connect_timeout_seconds": 10, "concurrency": 4, "mode": "standard"},
+  "thinking": {"mode": "default"},
+  "workload": {"messages": [{"role": "system", "content": "You are a helpful assistant."}, {"role": "user", "content": "用三句话解释为什么天空是蓝色的。"}], "max_output_tokens": 256},
+  "channels": [
+    {"name": "deepseek-chat", "base_url": "https://api.deepseek.com/v1", "model": "deepseek-flash", "api_key_env": "DEEPSEEK_API_KEY", "protocol": "chat", "profile": "deepseek", "cache_block_size": 128},
+    {"name": "deepseek-responses", "base_url": "https://api.deepseek.com/v1", "model": "deepseek-flash", "api_key_env": "DEEPSEEK_API_KEY", "protocol": "responses", "profile": "deepseek", "cache_block_size": 128},
+    {"name": "tencent-intl-chat", "base_url": "https://tokenhub-intl.tencentmaas.com/v1", "model": "deepseek-v4.1-flash", "api_key_env": "TENCENT_INTL_API_KEY", "protocol": "chat", "profile": "tencent"},
+    {"name": "tencent-intl-responses", "base_url": "https://tokenhub-intl.tencentmaas.com/v1", "model": "deepseek-v4.1-flash", "api_key_env": "TENCENT_INTL_API_KEY", "protocol": "responses", "profile": "tencent"}
+  ]
+}

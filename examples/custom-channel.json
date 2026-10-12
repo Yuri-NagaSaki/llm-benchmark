@@ -1,0 +1,18 @@
+{
+  "run": {"rounds": 3},
+  "thinking": {"mode": "off"},
+  "channels": [{
+    "name": "custom-responses",
+    "base_url": "https://gateway.example.com/v1",
+    "path": "/responses",
+    "model": "replace-with-your-model-id",
+    "api_key_env": "CUSTOM_API_KEY",
+    "protocol": "responses",
+    "thinking_bodies": {"off": {"reasoning": {"effort": "none"}}, "on": {"reasoning": {"effort": "$effort"}}},
+    "extra_body": {"store": false},
+    "headers": {"X-Project-ID": {"env": "CUSTOM_PROJECT_ID"}},
+    "usage_paths": {"cached_input_tokens": "usage.input_tokens_details.cached_tokens"},
+    "cache_block_size": 128,
+    "tpm_header": "x-account-tpm-limit"
+  }]
+}

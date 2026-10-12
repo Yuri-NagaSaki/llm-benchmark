@@ -1,0 +1,69 @@
+{
+  "scope": "3 one-off live smoke requests, not a channel performance comparison; stream terminal cleanup changed afterwards and was validated locally; first-output timings and usage are unaffected",
+  "started_at": "2026-10-12T13:48:40.260480921Z",
+  "samples": [
+    {
+      "channel": "deepseek-chat-default",
+      "protocol": "chat",
+      "started_at": "2026-10-12T13:48:40.260623832Z",
+      "outcome": "incomplete",
+      "finish_reason": "length",
+      "http_status": 200,
+      "model": "deepseek-flash",
+      "reasoning_check": "not_required",
+      "usage": {
+        "cache_miss_input_tokens": 34,
+        "cache_write_tokens": null,
+        "cached_input_tokens": 0,
+        "input_tokens": 34,
+        "output_tokens": 64,
+        "reasoning_tokens": 64,
+        "text_output_tokens": 0
+      },
+      "first_reasoning_ms": 941.018819,
+      "first_text_ms": null
+    },
+    {
+      "channel": "tencent-chat-off",
+      "protocol": "chat",
+      "started_at": "2026-10-12T13:48:40.260743365Z",
+      "outcome": "completed",
+      "finish_reason": "stop",
+      "http_status": 200,
+      "model": "deepseek-v4.1-flash",
+      "reasoning_check": "passed",
+      "usage": {
+        "cache_miss_input_tokens": 8,
+        "cache_write_tokens": null,
+        "cached_input_tokens": 0,
+        "input_tokens": 8,
+        "output_tokens": 1,
+        "reasoning_tokens": 0,
+        "text_output_tokens": 1
+      },
+      "first_reasoning_ms": null,
+      "first_text_ms": 1819.421655
+    },
+    {
+      "channel": "tencent-responses-off",
+      "protocol": "responses",
+      "started_at": "2026-10-12T13:48:40.260543812Z",
+      "outcome": "completed",
+      "finish_reason": "completed",
+      "http_status": 200,
+      "model": "deepseek-v4.1-flash",
+      "reasoning_check": "passed",
+      "usage": {
+        "cache_miss_input_tokens": 8,
+        "cache_write_tokens": null,
+        "cached_input_tokens": 0,
+        "input_tokens": 8,
+        "output_tokens": 1,
+        "reasoning_tokens": 0,
+        "text_output_tokens": 1
+      },
+      "first_reasoning_ms": null,
+      "first_text_ms": 1855.227024
+    }
+  ]
+}
