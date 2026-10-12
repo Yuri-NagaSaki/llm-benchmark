@@ -47,4 +47,8 @@ DeepSeek 的结果证明 reasoning-only 和用量耗尽能够保真归档；不�
 
 ## 发布核验
 
-仓库内 CI 会执行最低版本 Go 1.26 的格式、vet、race、覆盖率、构建与配置校验；版本标签工作流产出 5 个平台二进制及 SHA-256。远端运行状态与实际制品身份以对应 GitHub Actions / Releases 页面为准。
+初始源码提交 `7677ca44e720a185f9c046586a422b7dd9beb9cb` 的 [主分支 CI](https://github.com/Yuri-NagaSaki/llm-benchmark/actions/runs/38260100629) 和 [v1.0.0 发布工作流](https://github.com/Yuri-NagaSaki/llm-benchmark/actions/runs/38260312464) 均通过，远端实际使用 Go 1.26.8。
+
+[v1.0.0](https://github.com/Yuri-NagaSaki/llm-benchmark/releases/tag/v1.0.0) 包含 Linux amd64/arm64、macOS amd64/arm64、Windows amd64 共 5 个二进制及 SHA256SUMS。已下载全部制品，校验和全部匹配；实际执行 Linux amd64 的 `--version`、`--validate` 成功。`go version -m` 确认源码提交为上述 SHA、`vcs.modified=false`、`CGO_ENABLED=0`。Linux 发布文件为 6,807,714 bytes，SHA-256 为 `386e45c98e0bd8e6facc02fec49168f72f5484245c797efa40514f352374cab3`。其他平台只做交叉编译和校验和验证，没有宣称在对应操作系统实跑。
+
+首次 CI 提示旧 Actions 使用已弃用的 Node.js 20，随后将主分支工作流更新为官方当前 v7 标签，并固定 Ubuntu 24.04 runner。该维护提交不修改 Go 源码；v1.0.0 标签和已发布制品保持原始身份。
